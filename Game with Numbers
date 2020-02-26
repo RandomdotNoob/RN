@@ -1,0 +1,28 @@
+import random
+import time
+
+####
+You GUESS a number (input) and your opponent does the same (random.randint).
+The one that gets closer to target number (random.choice) by guessing WINS !!!
+####
+
+myList = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
+
+def player1():
+    return input("Enter your Number: ")
+
+
+def opponent():
+    return random.randint(0,100)
+
+def target():
+    return random.choice(myList)
+
+
+input("Enter your Number: ")
+print("Your opponent said: ")
+time.sleep(1.5)
+print(opponent())
+print("Target Number is....")
+time.sleep(1.5)
+print(target())
