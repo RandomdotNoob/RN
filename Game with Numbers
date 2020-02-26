@@ -3,7 +3,7 @@ import time
 
 ####
 You GUESS a number (input) and your opponent does the same (random.randint).
-The one that gets closer to target number (random.choice) by guessing WINS !!!
+The one that gets closer to the target number (random.choice) by guessing, WINS !!!
 ####
 
 myList = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
