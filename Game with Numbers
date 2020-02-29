@@ -2,12 +2,8 @@ import random
 import time
 
 myList = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
-guess_count = 0
-guess_limit = 0
-player_points = 0
 target_number = random.choice(myList)
 opponent_guess = random.randint(0, 100)
-out_of_guesses = 0
 
 name = input("Enter you name: ")
 print("Hallo " + name)
