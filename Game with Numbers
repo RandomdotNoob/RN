@@ -1,28 +1,53 @@
 import random
 import time
 
-####
-You GUESS a number (input) and your opponent does the same (random.randint).
-The one that gets closer to the target number (random.choice) by guessing, WINS !!!
-####
-
 myList = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
-
-def player1():
-    return input("Enter your Number: ")
-
-
-def opponent():
-    return random.randint(0,100)
-
-def target():
-    return random.choice(myList)
+guess_count = 0
+guess_limit = 0
+player_points = 0
+target_number = random.choice(myList)
+opponent_guess = random.randint(0, 100)
+out_of_guesses = 0
 
 
-input("Enter your Number: ")
-print("Your opponent said: ")
-time.sleep(1.5)
-print(opponent())
-print("Target Number is....")
-time.sleep(1.5)
-print(target())
+#def main_game():
+    #name = input("Enter you name: ")
+    #return name and print("Hallo " + name)
+
+name = input("Enter you name: ")
+print("Hallo " + name)
+time.sleep(1)
+guess = input("Enter guess: ")
+print("Alrighty then... Your guess is " + guess)
+time.sleep(1)
+print("Your opponent said: " + str(opponent_guess))
+print("Please wait")
+time.sleep(1)
+print("Target Number is " + str(target_number))
+
+if str(guess) and str(opponent_guess) > str(target_number):
+    if str(guess) + str(target_number) < str(opponent_guess) + str(target_number):
+        print("You WIN !!!")
+    else:
+        print("You LOST...")
+elif str(guess) and str(opponent_guess) < str(target_number):
+    if str(guess) + str(target_number) > str(opponent_guess) + str(target_number):
+        print("You WIN !!!")
+    else:
+        print("You LOST...")
+elif str(guess) == str(target_number):
+    print("You WIN !!!")
+elif str(opponent_guess) == str(target_number):
+    print("You LOST...")
+elif str(opponent_guess) and str(guess) == str(target_number):
+    print("It's a draw... Wow what were the ODDS !!!!")
+elif str(opponent_guess) > str(target_number) > str(guess):
+    if abs(str(opponent_guess) + str(guess)) - (str(target_number)) - str(guess) > abs(str(opponent_guess) + str(guess)) - (str(target_number)) - str(opponent_guess):
+        print("You LOST...")
+    else:
+        print("You WIN !!!")
+elif str(guess) > str(target_number) > str(opponent_guess):
+    if abs(str(opponent_guess) + str(guess)) - str(target_number) - str(guess) < abs(str(opponent_guess) + str(guess)) - (str(target_number)) - str(opponent_guess):
+        print("You WIN...")
+    else:
+        print("You LOST !!!")
