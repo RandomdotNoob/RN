@@ -2,8 +2,12 @@ import random
 import time
 
 myList = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
+guess_count = 0
+guess_limit = 0
+player_points = 0
 target_number = random.choice(myList)
 opponent_guess = random.randint(0, 100)
+out_of_guesses = 0
 
 name = input("Enter you name: ")
 print("Hallo " + name)
@@ -33,7 +37,7 @@ elif str(opponent_guess) == str(target_number):
 elif str(opponent_guess) and str(guess) == str(target_number):
     print("It's a draw... Wow what were the ODDS !!!!")
 elif str(opponent_guess) > str(target_number) > str(guess):
-    if abs(str(opponent_guess) + str(guess)) - (str(target_number)) - str(guess) > abs(str(opponent_guess) + str(guess)) - (str(target_number)) - str(opponent_guess):
+    if abs(str(opponent_guess) + str(guess)) - (str(target_number)) - str(opponent_guess) > abs(str(opponent_guess) + str(guess)) - (str(target_number)) - str(guess):
         print("You LOST...")
     else:
         print("You WIN !!!")
