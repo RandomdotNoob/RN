@@ -1,18 +1,41 @@
-num1 = input("Enter a Number: ")
-num2 = input("Enter a second Number: ")
-operator = input("Enter an operator: ")
+def addition():
+    return "+"
 
-if operator == '+':
-    result = float(num1) + float(num2)
-    print(result)
-elif operator == '-':
-    result = float(num1) - float(num2)
-    print(result)
-elif operator == '*':
-    result = float(num1) * float(num2)
-    print(result)
-elif operator == '/':
-    result = float(num1) / float(num2)
-    print(result)
-else:
-    input("Please enter a valid operator: ")
+
+def subtraction():
+    return "-"
+
+
+def multiplication():
+    return "*"
+
+
+def division():
+    return "/"
+
+
+def start():
+    while True:
+        try:
+            num1 = int(input("Enter a Number: "))
+            num2 = int(input("Enter a second Number: "))
+            operator = input("Enter an operator: ")
+
+            if operator == addition():
+                result = float(num1) + float(num2)
+                print(result)
+            elif operator == subtraction():
+                result = float(num1) - float(num2)
+                print(result)
+            elif operator == multiplication():
+                result = float(num1) * float(num2)
+                print(result)
+            elif operator == division():
+                result = float(num1) / float(num2)
+                print(result)
+            else:
+                input("Please enter a valid operator: ")
+        except ValueError:
+            print('You have to insert a number')
+            continue
+start()
